@@ -53,7 +53,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (mEmailEditText.getText().toString() != ""
                 && mPasswordEditText.getText().toString() != "") {
-            // TODO: should implement
             if (mIsSignUp) {
 
                 mAuth.createUserWithEmailAndPassword(
@@ -69,6 +68,18 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 });
 
             } else {
+
+                mAuth.signInWithEmailAndPassword(
+                        mEmailEditText.getText().toString(),
+                        mPasswordEditText.getText().toString()
+                ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            startActivity(new Intent(AuthActivity.this, FriendActivity.class));
+                        }
+                    }
+                });
 
             }
 
