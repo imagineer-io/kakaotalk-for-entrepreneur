@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Imagineer Talk</string>
+    <string name="send_text">Send</string>
 </resources>
