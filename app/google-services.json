@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "240593096570",
+    "firebase_url": "https://imagineertalk-e3e13.firebaseio.com",
+    "project_id": "imagineertalk-e3e13",
+    "storage_bucket": "imagineertalk-e3e13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240593096570:android:a2d56ae7bd6eeb88",
+        "android_client_info": {
+          "package_name": "io.imagineer.imagineertalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240593096570-tp3798gu6rqcav4fqq9r3qg0m8e006cr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.imagineer.imagineertalk",
+            "certificate_hash": "89d256c2a92e893a83f1978c31ba7dadb4417f88"
+          }
+        },
+        {
+          "client_id": "240593096570-u2b2r1ev96l93gp2c44n1ulg53r7u6vl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGEnDeyfWg97U2PTHKQr0f0-a9x4qQfl4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240593096570-u2b2r1ev96l93gp2c44n1ulg53r7u6vl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
