@@ -63,7 +63,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(AuthActivity.this, MainActivity.class));
+                            startActivity(new Intent(AuthActivity.this, FriendActivity.class));
                         }
                     }
                 });
@@ -71,6 +71,9 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             } else {
 
             }
+
+            mEmailEditText.setText("");
+            mPasswordEditText.setText("");
         }
     }
 }
