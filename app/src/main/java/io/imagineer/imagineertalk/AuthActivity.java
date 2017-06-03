@@ -12,8 +12,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final String CHILD_FRIENDS = "friends";
+    private FirebaseAuth mAuth;
+    private DatabaseReference mFirebaseDatabaseReference;
 
     private EditText mEmailEditText;
     private EditText mPasswordEditText;
@@ -21,8 +27,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
 
     private String mPageType;
     private boolean mIsSignUp;
-
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         mPasswordEditText = (EditText) findViewById(R.id.passwordEditText);
         mConfirmButton = (Button) findViewById(R.id.confirmButton);
 
+        mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();
@@ -62,6 +67,9 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Friend friend = new Friend(mEmailEditText.getText().toString());
+                            mFirebaseDatabaseReference.child(CHILD_FRIENDS).push().setValue(friend);
+
                             startActivity(new Intent(AuthActivity.this, FriendActivity.class));
                         }
                     }

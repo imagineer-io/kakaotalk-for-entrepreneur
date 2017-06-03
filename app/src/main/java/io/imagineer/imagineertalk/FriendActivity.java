@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class FriendActivity extends AppCompatActivity {
 
-    private final String CHILD_USERS = "users";
+    private final String CHILD_FRIENDS = "friends";
 
     private DatabaseReference mFirebaseDatabaseReference;
     private FirebaseAuth mAuth;
@@ -80,6 +80,6 @@ public class FriendActivity extends AppCompatActivity {
 
             }
         };
-        mFirebaseDatabaseReference.child(CHILD_USERS).addChildEventListener(childEventListener);
+        mFirebaseDatabaseReference.child(CHILD_FRIENDS).addChildEventListener(childEventListener);
     }
 }
